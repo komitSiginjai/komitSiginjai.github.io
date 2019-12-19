@@ -6,7 +6,7 @@
 						cols="12"
 						class="text-center"
 					>
-						<h2 class="mb-5">Kenapa Harus Gabung KOMIT'S?</h2>
+						<h2 data-aos="fade" class="mb-5">Kenapa Harus Gabung KOMIT'S?</h2>
 						<p>Berikut alasan kenapa kamu harus bergabung dengan KOMIT'S</p>
 					</v-col>
 				</v-row>

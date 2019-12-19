@@ -4,21 +4,59 @@
       v-model="drawer"
       app
     >
-      <v-list dense>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-home</v-icon>
-          </v-list-item-action>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            KOMIT'S
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            IT Community
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list
+        dense
+        nav
+      >
+        <v-list-item
+          link
+										@click="$vuetify.goTo('#sec1', options)"
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-view-dashboard</v-icon>
+          </v-list-item-icon>
+
           <v-list-item-content>
-            <v-list-item-title>Home</v-list-item-title>
+            <v-list-item-title>Dashboard</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-contact-mail</v-icon>
-          </v-list-item-action>
+
+								<v-list-item
+          link
+										@click="$vuetify.goTo('#sec3', options)"
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-image</v-icon>
+          </v-list-item-icon>
+
           <v-list-item-content>
-            <v-list-item-title>Contact</v-list-item-title>
+            <v-list-item-title>Activity</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+								<v-list-item
+          link
+										@click="$vuetify.goTo('#sec4', options)"
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-help-box</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Gallery</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -57,6 +95,7 @@
           src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
           transition="scale-transition"
           width="40"
+										@click="drawer = !drawer"
         />
 							</div>
 						<v-toolbar-title>KOMIT'S</v-toolbar-title>
@@ -125,7 +164,7 @@ export default {
 
   data: function () {
 			return {
-				drawer: false
+				drawer: false,
 			}
 		},
 

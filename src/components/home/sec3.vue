@@ -1,11 +1,11 @@
 <template>
 		<div id="sec3">
-			<!-- <v-lazy
+			<v-lazy
 				v-model="isActive"
 				:options="{
 						threshold: .8
 				}"
-			> -->
+			>
 				<v-container v-if="loadingData">
 					<v-row>
 						<v-col
@@ -88,7 +88,7 @@
 					</v-row>
 				</v-container>
 
-			<!-- </v-lazy> -->
+			</v-lazy>
 		</div>
 </template>
 
