@@ -80,6 +80,7 @@
 						>
 							<v-btn 
 								class="mb-5"
+								@click="goToBlog()"
 							>
 								readmore
 							</v-btn>
@@ -115,7 +116,10 @@ export default {
 	methods: {
 		...mapActions({
 			fetchDatas: 'datas/fetchDatas'
-		})
+		}),
+		goToBlog() {
+			this.$router.push('/blog')
+		}
 	}
 }
 </script>
