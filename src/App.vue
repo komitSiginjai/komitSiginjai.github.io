@@ -267,7 +267,23 @@
     </v-app-bar>
 
     <v-content>
+						<v-snackbar
+							v-model="statusSnackbar.snackbar"
+							top="top"
+							:color="statusSnackbar.colorSnackbar"
+					>
+							{{ this.statusSnackbar.textSnackBar }}
+							<v-btn
+									color="white"
+									text
+									@click="closeSnackbar()"
+							>
+									Close
+							</v-btn>
+					</v-snackbar>
+
       <router-view/>
+
     </v-content>
   </v-app>
 </template>
@@ -285,7 +301,12 @@ export default {
 			return {
 				drawer: false,
 				model: 1,
-				pencarianString: ''
+				pencarianString: '',
+				statusSnackbar: {
+					snackbar: false,
+					colorSnackbar: null,
+					textSnackBar: ''
+				},
 			}
 		},
 
@@ -326,11 +347,16 @@ export default {
 		},
 		cariWhatWeDo() {
 			if(!this.dataTersedia){
-				this.isAlert = true
+				this.statusSnackbar.snackbar = true
+				this.statusSnackbar.colorSnackbar = 'error'
+				this.statusSnackbar.textSnackBar = 'Masukkan Keywoard Pencarian !'
 			} else {
 				this.$router.push('/blog/cari/' + this.pencarianString)
 				this.pencarianString = ''
 			}
+		},
+		closeSnackbar() {
+			this.statusSnackbar.snackbar = false
 		},
 	}
 
