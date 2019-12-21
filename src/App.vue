@@ -22,6 +22,7 @@
 									label="Search in This Blog"
 									prepend-icon="mdi-magnify"
 									v-model="pencarianString"
+									@keyup.enter="cariWhatWeDo()"
 							></v-text-field>
 						</v-list-item>
 
